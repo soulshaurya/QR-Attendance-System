@@ -1,15 +1,15 @@
 # QR Attendance System
 
-A simple QR-based attendance system built using React, Flask, and SQLite. The system records attendance by scanning a QR code and stores the student's details along with location and timestamp.
+A web-based attendance system that allows students to mark attendance by scanning a QR code. The system records attendance along with location and timestamp data for basic verification.
 
 ## Features
 
-* QR Code Attendance
+* QR Code Based Attendance
 * GPS Location Verification
 * Attendance Timestamp Recording
-* Flask Backend API
+* Student Attendance Tracking
 * SQLite Database Storage
-* Responsive User Interface
+* Responsive Interface
 
 ## Tech Stack
 
@@ -37,3 +37,13 @@ pip install flask flask-cors
 
 python app.py
 ```
+
+## Screenshots
+
+### Admin Page
+
+<img width="100%" src="screenshots/admin-page.png" alt="Admin Page">
+
+### Student Page
+
+<img width="100%" src="screenshots/student-page.png" alt="Student Page">
