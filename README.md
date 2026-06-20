@@ -42,8 +42,8 @@ python app.py
 
 ### Admin Page
 
-<img width="100%" src="screenshots/admin-page.png" alt="Admin Page">
+![Admin Page](./screenshots/admin-page.png.jpeg)
 
 ### Student Page
 
-<img width="100%" src="screenshots/student-page.png" alt="Student Page">
+![Student Page](./screenshots/student-page.png.jpeg)
