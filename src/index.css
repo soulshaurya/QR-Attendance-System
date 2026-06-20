@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Attendance Management System Design System - Glassmorphism with Cyan Gradients */
+
+@import url('https://fonts.googleapis.com/css2?family:Poppins:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Attendance System Color Palette */
+    --background: 206 44% 14%; /* #0f2027 - Deep teal background */
+    --foreground: 190 100% 98%; /* White text */
+
+    --card: 200 40% 20%; /* Glassmorphism card background */
+    --card-foreground: 190 100% 98%;
+
+    --popover: 200 40% 20%;
+    --popover-foreground: 190 100% 98%;
+
+    --primary: 190 100% 50%; /* #00e0ff - Bright cyan */
+    --primary-foreground: 206 44% 14%;
+
+    --secondary: 200 60% 30%; /* Teal secondary */
+    --secondary-foreground: 190 100% 98%;
+
+    --muted: 200 40% 25%;
+    --muted-foreground: 190 50% 80%;
+
+    --accent: 200 100% 40%; /* #0072ff - Blue accent */
+    --accent-foreground: 190 100% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 190 100% 50% / 0.2; /* Semi-transparent cyan border */
+    --input: 0 0% 100% / 0.1; /* Semi-transparent white input */
+    --ring: 190 100% 50%;
+
+    --radius: 1.25rem; /* Rounded design */
+
+    /* Glassmorphism Effects */
+    --glass-bg: 0 0% 100% / 0.05; /* rgba(255,255,255,0.05) */
+    --glass-border: 0 0% 100% / 0.1;
+    --glass-blur: blur(12px);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(206 44% 14%), hsl(200 40% 20%), hsl(200 60% 30%));
+    --gradient-button: linear-gradient(45deg, hsl(190 100% 50%), hsl(200 100% 40%));
+    --gradient-button-hover: linear-gradient(45deg, hsl(200 100% 40%), hsl(190 100% 50%));
+    
+    /* Shadows */
+    --shadow-glass: 0px 8px 25px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0px 5px 15px rgba(0, 224, 255, 0.5);
+    --shadow-inner: inset 0px 0px 15px rgba(0, 224, 255, 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 200 40% 20%;
+    --sidebar-foreground: 190 100% 98%;
+    --sidebar-primary: 190 100% 50%;
+    --sidebar-primary-foreground: 206 44% 14%;
+    --sidebar-accent: 200 60% 30%;
+    --sidebar-accent-foreground: 190 100% 98%;
+    --sidebar-border: 190 100% 50% / 0.2;
+    --sidebar-ring: 190 100% 50%;
+  }
+
+  .dark {
+    /* Same design for dark mode - already dark themed */
+    --background: 206 44% 14%;
+    --foreground: 190 100% 98%;
+    --card: 200 40% 20%;
+    --card-foreground: 190 100% 98%;
+    --popover: 200 40% 20%;
+    --popover-foreground: 190 100% 98%;
+    --primary: 190 100% 50%;
+    --primary-foreground: 206 44% 14%;
+    --secondary: 200 60% 30%;
+    --secondary-foreground: 190 100% 98%;
+    --muted: 200 40% 25%;
+    --muted-foreground: 190 50% 80%;
+    --accent: 200 100% 40%;
+    --accent-foreground: 190 100% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 190 100% 50% / 0.2;
+    --input: 0 0% 100% / 0.1;
+    --ring: 190 100% 50%;
+    --sidebar-background: 200 40% 20%;
+    --sidebar-foreground: 190 100% 98%;
+    --sidebar-primary: 190 100% 50%;
+    --sidebar-primary-foreground: 206 44% 14%;
+    --sidebar-accent: 200 60% 30%;
+    --sidebar-accent-foreground: 190 100% 98%;
+    --sidebar-border: 190 100% 50% / 0.2;
+    --sidebar-ring: 190 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+    background: var(--gradient-primary);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Base Card */
+  .glass-card {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid hsl(var(--glass-border));
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Glowing Button */
+  .btn-glow {
+    background: var(--gradient-button);
+    transition: var(--transition-smooth);
+  }
+  
+  .btn-glow:hover {
+    background: var(--gradient-button-hover);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Glowing Text */
+  .text-glow {
+    text-shadow: 0 0 15px hsl(var(--primary)), 0 0 25px hsl(var(--accent));
+    animation: glow 1.5s infinite alternate;
+  }
+
+  /* Input Glassmorphism */
+  .input-glass {
+    background: hsl(var(--input));
+    border: 1px solid hsl(var(--border));
+    backdrop-filter: var(--glass-blur);
+  }
+
+  /* QR Code Container */
+  .qr-container {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: var(--glass-blur);
+    border-radius: var(--radius);
+    padding: 1rem;
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes glow {
+    from { 
+      text-shadow: 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--accent)); 
+    }
+    to { 
+      text-shadow: 0 0 20px hsl(var(--primary)), 0 0 40px hsl(var(--accent)); 
+    }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 10px hsl(var(--primary) / 0.5); }
+    50% { box-shadow: 0 0 30px hsl(var(--primary) / 0.8); }
+  }
+
+  .animate-glow {
+    animation: glow 1.5s infinite alternate;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s infinite;
+  }
+}
